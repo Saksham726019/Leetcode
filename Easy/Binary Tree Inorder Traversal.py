@@ -10,6 +10,15 @@ class TreeNode:
 
 
 class Solution:
+    def inorderTraversal(self, root: TreeNode) -> list[int]:
+        if not root:
+            return []
+
+        return self.inorderTraversal(root.left) + [root.val] + self.inorderTraversal(root.right)
+
+
+"""Iterative
+class Solution:
     def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
         if not root:
             return []
@@ -37,3 +46,4 @@ class Solution:
                         current = None
 
         return nums
+"""
